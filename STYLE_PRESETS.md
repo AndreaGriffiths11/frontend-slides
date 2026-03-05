@@ -279,9 +279,56 @@ Before finalizing any presentation, verify:
 
 ---
 
+### 5. Paper & Ink
+
+**Vibe:** Editorial, literary, thoughtful
+
+**Typography:** `Cormorant Garamond` + `Source Serif 4`
+
+**Colors:** Warm cream (#faf9f7), charcoal (#1a1a1a), crimson accent (#c41e3a)
+
+**Signature:** Drop caps, pull quotes, elegant horizontal rules
+
+---
+
+### 6. Agentic Dark
+
+**Vibe:** Technical, modern, developer-focused, purple-accented
+
+**Layout:** Centered content on deep purple-blue gradient. Decorative star separators between sections.
+
+**Typography:**
+- Display: `Space Grotesk` (700)
+- Body: `Space Grotesk` (400)
+
+**Colors:**
+```css
+:root {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --card-bg: rgba(139, 92, 246, 0.15);
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --accent: #a78bfa;
+    --accent-secondary: #c4b5fd;
+    --separator: #6366f1;
+}
+```
+
+**Signature Elements:**
+- Decorative star separators (✦ · ✦ · ✦)
+- Soft purple gradient background
+- Numbered section indicators
+- Clean code-style typography
+- Subtle glow effects on accent elements
+
+**Best for:** Developer conferences, Technical talks, AI/ML presentations, Coding workshops
+
+---
+
 ## Light Themes
 
-### 5. Notebook Tabs
+### 7. Notebook Tabs
 
 **Vibe:** Editorial, organized, elegant, tactile
 
@@ -313,7 +360,7 @@ Before finalizing any presentation, verify:
 
 ---
 
-### 6. Pastel Geometry
+### 8. Pastel Geometry
 
 **Vibe:** Friendly, organized, modern, approachable
 
@@ -344,7 +391,7 @@ Before finalizing any presentation, verify:
 
 ---
 
-### 7. Split Pastel
+### 9. Split Pastel
 
 **Vibe:** Playful, modern, friendly, creative
 
@@ -374,7 +421,7 @@ Before finalizing any presentation, verify:
 
 ---
 
-### 8. Vintage Editorial
+### 10. Vintage Editorial
 
 **Vibe:** Witty, confident, editorial, personality-driven
 
@@ -402,9 +449,45 @@ Before finalizing any presentation, verify:
 
 ---
 
+### 11. Codigo Hermoso
+
+**Vibe:** Playful, vibrant, creative, warm, Spanish-inspired
+
+**Layout:** Colorful gear/cog shapes in background. White translucent content boxes floating over the vibrant backdrop.
+
+**Typography:**
+- Display: `Playfair Display` (700)
+- Body: `Nunito` (400/500)
+
+**Colors:**
+```css
+:root {
+    --bg-primary: #fff5eb;
+    --bg-secondary: #fef3c7;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --accent: #f97316; /* Orange */
+    --accent-secondary: #8b5cf6; /* Purple */
+    --accent-tertiary: #06b6d4; /* Cyan */
+    --gear-colors: #f97316, #8b5cf6, #06b6d4, #84cc16, #ec4899;
+}
+```
+
+**Signature Elements:**
+- Colorful overlapping gear/cog shapes in background
+- White translucent content boxes
+- Warm orange as primary accent
+- Playful mix of colors (orange, purple, cyan, green)
+- Rounded, friendly card containers
+
+**Best for:** Creative coding workshops, Community talks, Educational content, Artistic presentations
+
+---
+
 ## Specialty Themes
 
-### 9. Neon Cyber
+### 12. Neon Cyber
 
 **Vibe:** Futuristic, techy, confident
 
@@ -416,7 +499,7 @@ Before finalizing any presentation, verify:
 
 ---
 
-### 10. Terminal Green
+### 13. Terminal Green
 
 **Vibe:** Developer-focused, hacker aesthetic
 
@@ -428,7 +511,7 @@ Before finalizing any presentation, verify:
 
 ---
 
-### 11. Swiss Modern
+### 14. Swiss Modern
 
 **Vibe:** Clean, precise, Bauhaus-inspired
 
@@ -440,7 +523,7 @@ Before finalizing any presentation, verify:
 
 ---
 
-### 12. Paper & Ink
+### 15. Paper & Ink
 
 **Vibe:** Editorial, literary, thoughtful
 
@@ -449,6 +532,43 @@ Before finalizing any presentation, verify:
 **Colors:** Warm cream (#faf9f7), charcoal (#1a1a1a), crimson accent (#c41e3a)
 
 **Signature:** Drop caps, pull quotes, elegant horizontal rules
+
+---
+
+### 16. Startup Pitch
+
+**Vibe:** Professional, investor-ready, data-focused, confident
+
+**Layout:** Clean white background. Big bold metrics. Minimal decorations - content is king.
+
+**Typography:**
+- Display: `Inter` (700)
+- Body: `Inter` (400/500)
+
+**Colors:**
+```css
+:root {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --card-bg: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --accent: #0ea5e9;
+    --success: #22c55e;
+    --metric-bg: #f1f5f9;
+}
+```
+
+**Signature Elements:**
+- Big bold metrics with labels
+- Problem/Solution slide structure
+- Clean data visualization style
+- Minimal decorations - content is king
+- Professional slide numbers
+- Market size callouts
+- Team section with photo placeholders
+
+**Best for:** Investor pitches, Startup decks, Business proposals, Funding presentations
 
 ---
 
@@ -466,6 +586,11 @@ Before finalizing any presentation, verify:
 | Vintage Editorial | Fraunces | Work Sans | Google |
 | Neon Cyber | Clash Display | Satoshi | Fontshare |
 | Terminal Green | JetBrains Mono | JetBrains Mono | JetBrains |
+| Swiss Modern | Archivo | Nunito | Google |
+| Paper & Ink | Cormorant Garamond | Source Serif 4 | Google |
+| Agentic Dark | Space Grotesk | Space Grotesk | Google |
+| Codigo Hermoso | Playfair Display | Nunito | Google |
+| Startup Pitch | Inter | Inter | Google |
 
 ---
 
