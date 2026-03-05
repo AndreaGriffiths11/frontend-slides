@@ -1,65 +1,43 @@
 # Frontend Slides MCP Server
 
-Generate stunning, zero-dependency HTML presentations with the Model Context Protocol (MCP). **Powered by GitHub Copilot CLI** — demonstrating how Copilot CLI's agent capabilities can rapidly build MCP tools that integrate with any AI assistant.
+Generate HTML presentations with the Model Context Protocol.
 
-## Features
+## What It Does
 
-- **12 Curated Style Presets** — Dark and light themes, from Neon Cyber to Paper & Ink
-- **Zero Dependencies** — Single HTML files with inline CSS/JS
-- **Viewport-Fitting** — Every slide fits exactly, no scrolling
+- **12 style presets** — Dark and light themes, from Neon Cyber to Paper & Ink
+- **Zero dependencies** — Single HTML files with inline CSS/JS
+- **Fits the viewport** — Every slide fills the screen, no scrolling
 - **Responsive** — Works on desktop, tablet, and mobile
-- **Touch Support** — Swipe navigation on mobile devices
-- **Keyboard Navigation** — Arrow keys and spacebar
-- **Entrance Animations** — Smooth reveal animations per slide
+- **Touch support** — Swipe to navigate on mobile
+- **Keyboard navigation** — Arrow keys and spacebar
+- **Entrance animations** — Smooth reveals per slide
 
 ## Installation
 
-### Prerequisites
-
-- Python 3.10 or higher
-- pip or uv package manager
-
-### Install
+You'll need Python 3.10+ and pip or uv.
 
 ```bash
-# Clone the repository
+# Clone and install
 git clone https://github.com/AndreaGriffiths11/frontend-slides.git
 cd frontend-slides/mcp
-
-# Install with pip
 pip install -e .
-
-# Or with uv
-uv pip install -e .
 ```
 
 ## Usage
 
-### Run the MCP Server
+### Run the Server
 
 ```bash
 frontend-slides-mcp
 ```
 
-The server communicates via stdio, ready for MCP clients like **Copilot CLI**, Claude Desktop, Cursor, or other MCP-compatible tools.
-
-### Configure with Copilot CLI
-
-Add to your Copilot CLI MCP configuration:
-
-```json
-{
-  "mcpServers": {
-    "frontend-slides": {
-      "command": "frontend-slides-mcp"
-    }
-  }
-}
-```
+The server runs on stdio, ready for any MCP client.
 
 ### Configure with Claude Desktop
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json` on macOS):
+Add this to your Claude Desktop config:
+
+**macOS:** `~/Library/Application Support/Claude/claude_desktop_config.json`
 
 ```json
 {
@@ -71,7 +49,7 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 }
 ```
 
-Or with a specific path:
+Or point directly to the script:
 
 ```json
 {
@@ -84,25 +62,22 @@ Or with a specific path:
 }
 ```
 
-## Available Tools
+## Tools
 
 ### `create_presentation`
 
-Create a stunning HTML presentation.
+Build an HTML presentation.
 
-**Parameters:**
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
 | `topic` | string | Yes | — | Main topic/title |
 | `key_messages` | array | Yes | — | Key messages to distribute across slides |
 | `num_slides` | integer | No | 5 | Number of slides (3-30) |
 | `audience` | string | No | "general" | Target audience |
-| `tone` | string | No | "professional" | Tone: professional, casual, energetic, elegant, technical |
+| `tone` | string | No | "professional" | professional, casual, energetic, elegant, technical |
 | `style` | string | No | "neon-cyber" | Style preset slug |
 | `images` | array | No | [] | Optional image URLs |
 | `output_path` | string | No | cwd | Output directory |
-
-**Returns:** File path to the generated HTML file.
 
 **Example:**
 ```json
@@ -121,23 +96,23 @@ Create a stunning HTML presentation.
 }
 ```
 
+Returns the file path to the generated HTML.
+
 ### `publish_presentation`
 
-Publish an HTML presentation to GitHub Pages for instant sharing.
+Push an HTML presentation to GitHub Pages for instant sharing.
 
-Creates a new GitHub repository, pushes the HTML file as index.html,
-and enables GitHub Pages.
+Creates a repo, pushes the HTML as `index.html`, and enables Pages.
 
-**Prerequisites:**
-- GitHub CLI (`gh`) installed and authenticated (`gh auth login`)
+**You'll need:**
+- GitHub CLI (`gh`) installed and authenticated
 - Git installed
 
-**Parameters:**
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `html_path` | string | Yes | — | Path to the HTML presentation file |
-| `repo_name` | string | Yes | — | Name for the new GitHub repository |
-| `public` | boolean | No | false | Whether the repo should be public (default: private) |
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `html_path` | string | Yes | — | Path to the HTML file |
+| `repo_name` | string | Yes | — | Name for the new repo |
+| `public` | boolean | No | false | Public or private repo |
 
 **Returns:**
 - `repo_url`: GitHub repository URL
@@ -154,35 +129,27 @@ and enables GitHub Pages.
 }
 ```
 
-**Note:** GitHub Pages may take 1-2 minutes to build and deploy after publishing.
+GitHub Pages takes 1-2 minutes to deploy after publishing.
 
 ### `list_styles`
 
-List all available style presets.
+Get all available style presets.
 
-**Returns:** Array of style objects with slug, name, description, category, best_for, and animation_style.
+Returns an array with slug, name, description, category, best_for, and animation_style.
 
 ### `preview_style`
 
 Generate a sample HTML preview for a specific style.
 
-**Parameters:**
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
 | `style_name` | string | Yes | Style name or slug |
 
-**Returns:** HTML string of the preview slide.
+Returns the HTML for a preview slide.
 
 ### `get_style_details`
 
-Get complete details for a specific style preset.
-
-**Parameters:**
-| Name | Type | Required | Description |
-|------|------|----------|-------------|
-| `style_name` | string | Yes | Style name or slug |
-
-**Returns:** Full style configuration including fonts, colors, signature elements, and best use cases.
+Full details for a style preset — fonts, colors, signature elements, and use cases.
 
 ## Style Presets
 
@@ -190,12 +157,12 @@ Get complete details for a specific style preset.
 
 | Style | Vibe | Best For |
 |-------|------|----------|
-| **bold-signal** | Confident, bold, modern | Pitch decks, keynotes |
-| **electric-studio** | Bold, clean, professional | Agency presentations |
+| **bold-signal** | Confident, modern | Pitch decks, keynotes |
+| **electric-studio** | Bold, professional | Agency presentations |
 | **creative-voltage** | Energetic, retro-modern | Creative pitches |
 | **dark-botanical** | Elegant, sophisticated | Premium brands |
 | **neon-cyber** | Futuristic, techy | Tech startups, dev tools |
-| **terminal-green** | Developer-focused, hacker | API docs, technical content |
+| **terminal-green** | Developer-focused | API docs, technical content |
 
 ### Light Themes
 
@@ -210,58 +177,45 @@ Get complete details for a specific style preset.
 
 ## Output Format
 
-Generated presentations are:
+Each presentation is:
 - **Self-contained** — Single HTML file, no external dependencies
-- **Zero-config** — Works immediately in any browser
-- **Responsive** — Adapts to any viewport size
+- **Zero-config** — Opens in any browser
+- **Responsive** — Adapts to any viewport
 - **Accessible** — Respects prefers-reduced-motion
-- **Keyboard-friendly** — Arrow keys and spacebar navigation
+- **Keyboard-friendly** — Arrow keys and spacebar
 - **Touch-ready** — Swipe gestures on mobile
 
-## Publishing Presentations
+## Publishing to GitHub Pages
 
-The generated HTML presentations are perfect for hosting on GitHub Pages. Use GitHub CLI (`gh`) to quickly publish and share your slides.
+Generated HTML works great on GitHub Pages.
 
 ### Prerequisites
 
 - [GitHub CLI](https://cli.github.com/) installed
 - Authenticated with `gh auth login`
 
-### Quick Publish to GitHub Pages
+### Quick Publish
 
 ```bash
-# Create a new repository for your presentation
+# Create repo and push
 gh repo create my-presentation --public
-
-# Initialize git and push
 cd my-presentation
 git init
 git add .
 git commit -m "Add presentation"
 git push -u origin main
 
-# Enable GitHub Pages
+# Enable Pages
 gh api repos/{owner}/{repo}/pages -X POST -f source='{"branch":"main"}'
 ```
 
-Your presentation will be live at `https://{username}.github.io/{repo-name}/`.
+Live at `https://{username}.github.io/{repo-name}/`.
 
-### One-Liner for Existing Repo
-
-If you already have a repo and just want to add a presentation:
+### Check GitHub CLI Setup
 
 ```bash
-# Generate presentation and push to gh-pages branch
-gh api repos/{owner}/{repo}/pages -X POST -f source='{"branch":"main"}' 2>/dev/null || true
-```
-
-### Verify GitHub CLI Setup
-
-```bash
-# Check if authenticated
 gh auth status
-
-# If not authenticated, run:
+# If not authenticated:
 gh auth login
 ```
 
@@ -282,7 +236,6 @@ gh auth login
 <body>
     <section class="slide" data-slide="1">...</section>
     <section class="slide" data-slide="2">...</section>
-    <!-- ... -->
     <nav class="nav-dots">...</nav>
     <script>
         /* Intersection Observer for animations */
@@ -293,12 +246,13 @@ gh auth login
 </html>
 ```
 
-## Content Density Limits
+## Content Limits
 
-To ensure viewport fitting, each slide has content limits:
+To keep slides fitting the viewport:
+
 - **Title slide:** 1 heading + 1 subtitle
 - **Content slide:** 1 heading + 4-6 bullets (max 2 lines each)
-- **Feature grid:** 1 heading + 6 cards maximum
+- **Feature grid:** 1 heading + 6 cards max
 - **Code slide:** 1 heading + 8-10 lines of code
 - **Quote slide:** 1 quote (max 3 lines) + attribution
 
@@ -310,50 +264,41 @@ To ensure viewport fitting, each slide has content limits:
 mcp/
 ├── server.py              # MCP server entry point
 ├── pyproject.toml         # Python package config
-├── styles.json            # Structured style data
+├── styles.json            # Style data
 ├── README.md              # This file
 └── tools/
-    ├── __init__.py        # Tool exports
-    ├── create_presentation.py  # Main generation tool
-    ├── list_styles.py     # Style listing
-    ├── preview_style.py   # Style preview
-    ├── get_style_details.py    # Style details
-    ├── publish_presentation.py # GitHub Pages publishing
-    └── styles.py          # Style preset data (Python)
+    ├── __init__.py
+    ├── create_presentation.py
+    ├── list_styles.py
+    ├── preview_style.py
+    ├── get_style_details.py
+    ├── publish_presentation.py
+    └── styles.py
 ```
 
 ### Run Tests
 
 ```bash
-# Install dev dependencies
 pip install -e ".[dev]"
-
-# Run tests
 pytest
 ```
 
 ### Add a New Style
 
-1. Add the style to `tools/styles.py` in the `STYLE_PRESETS` dict
+1. Add the style to `tools/styles.py` in `STYLE_PRESETS`
 2. Add font URLs to `FONT_SOURCES`
-3. Update `styles.json` with the structured data
+3. Update `styles.json`
 4. Test with `preview_style`
 
 ## License
 
-MIT License — see [LICENSE](../LICENSE) for details.
+MIT License — see [LICENSE](../LICENSE).
 
 ## Inspiration & Credits
 
-**Built with Copilot CLI** — This project showcases how GitHub Copilot CLI's agent mode enables rapid development of MCP servers. Copilot CLI handles the full development workflow: understanding requirements, generating code, iterating on features, and shipping polished tools — all through natural language prompts.
+Started as a [Copilot CLI-powered project](https://github.com/AndreaGriffiths11/frontend-slides) to build stunning HTML presentations from the command line. This MCP server wraps that same logic for use with AI assistants.
 
-The MCP tools integrate seamlessly with Copilot CLI itself, as well as Claude Desktop, Cursor, and other MCP-compatible AI assistants.
+- [Original Project](https://github.com/AndreaGriffiths11/frontend-slides) — The SKILL.md and style presets
+- [Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — GitHub's AI-powered command line tool
 
-- [Original Project](https://github.com/AndreaGriffiths11/frontend-slides) — Style presets and design inspiration
-- [Copilot CLI Documentation](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — Learn more about GitHub's AI-powered command line tool
-
-## Credits
-
-Built on the [Model Context Protocol](https://modelcontextprotocol.io/) specification.
-
-Style presets inspired by modern editorial and product design — no generic AI aesthetics.
+Built on the [Model Context Protocol](https://modelcontextprotocol.io/).
