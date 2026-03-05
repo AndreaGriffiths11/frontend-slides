@@ -1,6 +1,6 @@
 # Frontend Slides MCP Server
 
-Generate stunning, zero-dependency HTML presentations with the Model Context Protocol (MCP).
+Generate stunning, zero-dependency HTML presentations with the Model Context Protocol (MCP). **Powered by GitHub Copilot CLI** — demonstrating how Copilot CLI's agent capabilities can rapidly build MCP tools that integrate with any AI assistant.
 
 ## Features
 
@@ -41,7 +41,21 @@ uv pip install -e .
 frontend-slides-mcp
 ```
 
-The server communicates via stdio, ready for MCP clients like Claude Desktop, Cursor, or other MCP-compatible tools.
+The server communicates via stdio, ready for MCP clients like **Copilot CLI**, Claude Desktop, Cursor, or other MCP-compatible tools.
+
+### Configure with Copilot CLI
+
+Add to your Copilot CLI MCP configuration:
+
+```json
+{
+  "mcpServers": {
+    "frontend-slides": {
+      "command": "frontend-slides-mcp"
+    }
+  }
+}
+```
 
 ### Configure with Claude Desktop
 
@@ -331,11 +345,11 @@ MIT License — see [LICENSE](../LICENSE) for details.
 
 ## Inspiration & Credits
 
-This MCP server was inspired by the original [frontend-slides SKILL.md project](https://github.com/AndreaGriffiths11/frontend-slides), a Claude Code skill for creating stunning HTML presentations.
+**Built with Copilot CLI** — This project showcases how GitHub Copilot CLI's agent mode enables rapid development of MCP servers. Copilot CLI handles the full development workflow: understanding requirements, generating code, iterating on features, and shipping polished tools — all through natural language prompts.
 
-**Powered by Copilot CLI** — This project demonstrates how GitHub Copilot CLI can power MCP servers. Copilot CLI's agent capabilities enable rapid development of MCP tools that integrate seamlessly with AI assistants like Claude Desktop and Claude Code.
+The MCP tools integrate seamlessly with Copilot CLI itself, as well as Claude Desktop, Cursor, and other MCP-compatible AI assistants.
 
-- [Original Project](https://github.com/AndreaGriffiths11/frontend-slides) — The SKILL.md and style presets that started it all
+- [Original Project](https://github.com/AndreaGriffiths11/frontend-slides) — Style presets and design inspiration
 - [Copilot CLI Documentation](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — Learn more about GitHub's AI-powered command line tool
 
 ## Credits
