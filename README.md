@@ -37,6 +37,34 @@ Then use it by typing `/frontend-slides` in Claude Code.
 2. Place them in `~/.claude/skills/frontend-slides/`
 3. Restart Claude Code
 
+## Copilot CLI Integration
+
+This repo includes GitHub Copilot CLI commands for analyzing and extracting content from presentations.
+
+### Available Commands
+
+| Command | Description |
+|---------|-------------|
+| `/summarize-slides` | Summarize content and structure of an HTML presentation |
+| `/find-topics` | Extract and organize topics/themes from a presentation |
+| `/suggest-style` | Recommend a visual style based on content and audience |
+| `/convert-ppt` | Convert PowerPoint files to HTML presentations |
+| `/extract-content` | Extract structured content in JSON, Markdown, or outline format |
+
+### Quick Start
+
+```bash
+# Copy commands to your Copilot skills directory
+mkdir -p ~/.copilot/skills/frontend-slides
+cp -r .copilot ~/.copilot/skills/frontend-slides/
+cp SKILL.md STYLE_PRESETS.md ~/.copilot/skills/frontend-slides/
+
+# Use a command
+/copilot summarize-slides my-presentation.html
+```
+
+See [COPILOT.md](COPILOT.md) for detailed documentation and usage examples.
+
 ## Usage
 
 ### Create a New Presentation
@@ -140,11 +168,14 @@ This skill was born from the belief that:
 | File | Purpose |
 |------|---------|
 | `SKILL.md` | Main skill instructions for Claude Code |
-| `STYLE_PRESETS.md` | Reference file with 10 curated visual styles |
+| `STYLE_PRESETS.md` | Reference file with 12 curated visual styles |
+| `COPILOT.md` | Copilot CLI integration documentation |
+| `.copilot/` | Copilot CLI commands and discovery files |
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/claude-code) CLI
+- [Claude Code](https://claude.ai/claude-code) CLI — for presentation creation
+- [GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) (optional) — for analysis commands
 - For PPT conversion: Python with `python-pptx` library
 
 ## Credits
