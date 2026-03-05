@@ -307,9 +307,9 @@ Copy this HTML to a file and open in a browser to see the preview."""
         
         elif name == "publish_presentation":
             result = publish_presentation(
-                html_path=arguments.get("html_path", ""),
+                html_file=arguments.get("html_path", ""),
                 repo_name=arguments.get("repo_name", ""),
-                public=arguments.get("public", False),
+                private=not arguments.get("public", False),
             )
             
             if "error" in result:
@@ -321,7 +321,7 @@ Copy this HTML to a file and open in a browser to see the preview."""
 
 📁 Repository: {result['repo_url']}
 🌐 Pages URL: {result['pages_url']}
-{'🔓 Public' if result['public'] else '🔒 Private'}
+{'🔓 Public' if result['visibility'] == 'public' else '🔒 Private'}
 
 Note: GitHub Pages may take 1-2 minutes to build and deploy."""
             )]

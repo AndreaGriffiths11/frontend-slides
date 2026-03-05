@@ -107,6 +107,41 @@ Create a stunning HTML presentation.
 }
 ```
 
+### `publish_presentation`
+
+Publish an HTML presentation to GitHub Pages for instant sharing.
+
+Creates a new GitHub repository, pushes the HTML file as index.html,
+and enables GitHub Pages.
+
+**Prerequisites:**
+- GitHub CLI (`gh`) installed and authenticated (`gh auth login`)
+- Git installed
+
+**Parameters:**
+| Name | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `html_path` | string | Yes | — | Path to the HTML presentation file |
+| `repo_name` | string | Yes | — | Name for the new GitHub repository |
+| `public` | boolean | No | false | Whether the repo should be public (default: private) |
+
+**Returns:**
+- `repo_url`: GitHub repository URL
+- `pages_url`: Live GitHub Pages URL
+- `repo_name`: Repository name
+- `visibility`: "private" or "public"
+
+**Example:**
+```json
+{
+  "html_path": "/path/to/my-presentation.html",
+  "repo_name": "ai-products-slides",
+  "public": true
+}
+```
+
+**Note:** GitHub Pages may take 1-2 minutes to build and deploy after publishing.
+
 ### `list_styles`
 
 List all available style presets.
@@ -134,42 +169,6 @@ Get complete details for a specific style preset.
 | `style_name` | string | Yes | Style name or slug |
 
 **Returns:** Full style configuration including fonts, colors, signature elements, and best use cases.
-
-### `publish_presentation`
-
-Publish an HTML presentation to GitHub Pages.
-
-**Parameters:**
-| Name | Type | Required | Default | Description |
-|------|------|----------|---------|-------------|
-| `html_path` | string | Yes | — | Path to the HTML presentation file |
-| `repo_name` | string | Yes | — | Name for the new GitHub repository (must be unique) |
-| `public` | boolean | No | false | Whether the repo should be public |
-
-**Returns:** Dict with `pages_url`, `repo_url`, and `repo_name`.
-
-**Prerequisites:**
-- GitHub CLI (`gh`) installed and authenticated
-- Git installed
-
-**Example:**
-```json
-{
-  "html_path": "/path/to/presentation.html",
-  "repo_name": "my-awesome-slides",
-  "public": true
-}
-```
-
-**Response:**
-```
-Presentation published! It may take a minute for GitHub Pages to build.
-Pages URL: https://username.github.io/my-awesome-slides/
-Repo: https://github.com/username/my-awesome-slides
-🔓 Public
-
-Note: GitHub Pages may take 1-2 minutes to build and deploy.
-```
 
 ## Style Presets
 
@@ -305,6 +304,7 @@ mcp/
     ├── list_styles.py     # Style listing
     ├── preview_style.py   # Style preview
     ├── get_style_details.py    # Style details
+    ├── publish_presentation.py # GitHub Pages publishing
     └── styles.py          # Style preset data (Python)
 ```
 
