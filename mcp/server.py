@@ -18,6 +18,7 @@ from tools import (
     list_styles,
     preview_style,
     get_style_details,
+    publish_presentation,
 )
 
 # Configure logging
@@ -158,6 +159,38 @@ Returns complete style information including:
                 "required": ["style_name"],
             },
         ),
+        Tool(
+            name="publish_presentation",
+            description="""Publish an HTML presentation to GitHub Pages.
+
+Creates a new GitHub repository, pushes the presentation as index.html,
+and enables GitHub Pages for instant sharing.
+
+Requires:
+- GitHub CLI (gh) installed and authenticated
+- Git installed
+
+Returns the live Pages URL for sharing.""",
+            inputSchema={
+                "type": "object",
+                "properties": {
+                    "html_path": {
+                        "type": "string",
+                        "description": "Path to the HTML presentation file",
+                    },
+                    "repo_name": {
+                        "type": "string",
+                        "description": "Name for the new GitHub repository (must be unique)",
+                    },
+                    "public": {
+                        "type": "boolean",
+                        "description": "Whether the repo should be public (default: false/private)",
+                        "default": False,
+                    },
+                },
+                "required": ["html_path", "repo_name"],
+            },
+        ),
     ]
 
 
@@ -271,6 +304,27 @@ Copy this HTML to a file and open in a browser to see the preview."""
                 lines.append(f"- {use_case}")
             
             return [TextContent(type="text", text="\n".join(lines))]
+        
+        elif name == "publish_presentation":
+            result = publish_presentation(
+                html_path=arguments.get("html_path", ""),
+                repo_name=arguments.get("repo_name", ""),
+                public=arguments.get("public", False),
+            )
+            
+            if "error" in result:
+                return [TextContent(type="text", text=f"Error: {result['error']}")]
+            
+            return [TextContent(
+                type="text",
+                text=f"""{result['message']}
+
+📁 Repository: {result['repo_url']}
+🌐 Pages URL: {result['pages_url']}
+{'🔓 Public' if result['public'] else '🔒 Private'}
+
+Note: GitHub Pages may take 1-2 minutes to build and deploy."""
+            )]
         
         else:
             return [TextContent(type="text", text=f"Unknown tool: {name}")]

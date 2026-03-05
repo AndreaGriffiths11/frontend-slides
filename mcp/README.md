@@ -135,6 +135,42 @@ Get complete details for a specific style preset.
 
 **Returns:** Full style configuration including fonts, colors, signature elements, and best use cases.
 
+### `publish_presentation`
+
+Publish an HTML presentation to GitHub Pages.
+
+**Parameters:**
+| Name | Type | Required | Default | Description |
+|------|------|----------|---------|-------------|
+| `html_path` | string | Yes | — | Path to the HTML presentation file |
+| `repo_name` | string | Yes | — | Name for the new GitHub repository (must be unique) |
+| `public` | boolean | No | false | Whether the repo should be public |
+
+**Returns:** Dict with `pages_url`, `repo_url`, and `repo_name`.
+
+**Prerequisites:**
+- GitHub CLI (`gh`) installed and authenticated
+- Git installed
+
+**Example:**
+```json
+{
+  "html_path": "/path/to/presentation.html",
+  "repo_name": "my-awesome-slides",
+  "public": true
+}
+```
+
+**Response:**
+```
+Presentation published! It may take a minute for GitHub Pages to build.
+Pages URL: https://username.github.io/my-awesome-slides/
+Repo: https://github.com/username/my-awesome-slides
+🔓 Public
+
+Note: GitHub Pages may take 1-2 minutes to build and deploy.
+```
+
 ## Style Presets
 
 ### Dark Themes
