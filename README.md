@@ -250,6 +250,15 @@ Created by [@zarazhangrui](https://github.com/zarazhangrui) with Claude Code.
 
 Inspired by the "Vibe Coding" philosophy — building beautiful things without being a traditional software engineer.
 
+## Inspiration & Credits
+
+This project inspired the [frontend-slides MCP server](./mcp/), a Model Context Protocol implementation that brings presentation generation to any MCP-compatible AI assistant.
+
+**Powered by Copilot CLI** — The MCP server demonstrates how GitHub Copilot CLI can power MCP servers. Copilot CLI's agent capabilities enable rapid development of MCP tools that integrate seamlessly with AI assistants.
+
+- [MCP Server](./mcp/) — Use presentations programmatically with Claude Desktop or other MCP clients
+- [Copilot CLI Documentation](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — Learn more about GitHub's AI-powered command line tool
+
 ## License
 
 MIT — Use it, modify it, share it.

@@ -3,6 +3,12 @@ Frontend Slides MCP Server
 
 An MCP (Model Context Protocol) server for creating stunning HTML presentations.
 Provides tools for presentation generation, style discovery, and previewing.
+
+Inspired by the original frontend-slides SKILL.md project:
+https://github.com/AndreaGriffiths11/frontend-slides
+
+Powered by Copilot CLI — demonstrating how GitHub Copilot CLI can power MCP servers.
+https://docs.github.com/en/copilot/github-copilot-in-the-cli
 """
 
 import asyncio

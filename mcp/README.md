@@ -329,6 +329,15 @@ pytest
 
 MIT License — see [LICENSE](../LICENSE) for details.
 
+## Inspiration & Credits
+
+This MCP server was inspired by the original [frontend-slides SKILL.md project](https://github.com/AndreaGriffiths11/frontend-slides), a Claude Code skill for creating stunning HTML presentations.
+
+**Powered by Copilot CLI** — This project demonstrates how GitHub Copilot CLI can power MCP servers. Copilot CLI's agent capabilities enable rapid development of MCP tools that integrate seamlessly with AI assistants like Claude Desktop and Claude Code.
+
+- [Original Project](https://github.com/AndreaGriffiths11/frontend-slides) — The SKILL.md and style presets that started it all
+- [Copilot CLI Documentation](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — Learn more about GitHub's AI-powered command line tool
+
 ## Credits
 
 Built on the [Model Context Protocol](https://modelcontextprotocol.io/) specification.
