@@ -1,10 +1,10 @@
 # Frontend Slides
 
-A Claude Code skill for creating stunning, animation-rich HTML presentations — from scratch or by converting PowerPoint files.
+A Copilot CLI skill for creating stunning, animation-rich HTML presentations — from scratch or by converting PowerPoint files.
 
 ## What This Does
 
-**Frontend Slides** helps non-designers create beautiful web presentations without knowing CSS or JavaScript. It uses a "show, don't tell" approach: instead of asking you to describe your aesthetic preferences in words, it generates visual previews and lets you pick what you like.
+**Frontend Slides** helps non-designers create beautiful web presentations without knowing CSS or JavaScript. Instead of asking you to describe your aesthetic in words, it generates visual previews and lets you pick what you like.
 
 ### Key Features
 
@@ -16,26 +16,26 @@ A Claude Code skill for creating stunning, animation-rich HTML presentations —
 
 ## Installation
 
-### For Claude Code Users
+### For Copilot CLI Users
 
-Copy the skill files to your Claude Code skills directory:
+Copy the skill files to your Copilot CLI skills directory:
 
 ```bash
 # Create the skill directory
-mkdir -p ~/.claude/skills/frontend-slides
+mkdir -p ~/.copilot/skills/frontend-slides
 
 # Copy the files (or download from this repo)
-cp SKILL.md ~/.claude/skills/frontend-slides/
-cp STYLE_PRESETS.md ~/.claude/skills/frontend-slides/
+cp SKILL.md ~/.copilot/skills/frontend-slides/
+cp STYLE_PRESETS.md ~/.copilot/skills/frontend-slides/
 ```
 
-Then use it by typing `/frontend-slides` in Claude Code.
+Then use it by typing `/frontend-slides` in Copilot CLI.
 
 ### Manual Download
 
 1. Download `SKILL.md` and `STYLE_PRESETS.md` from this repo
-2. Place them in `~/.claude/skills/frontend-slides/`
-3. Restart Claude Code
+2. Place them in `~/.copilot/skills/frontend-slides/`
+3. Restart Copilot CLI
 
 ## Copilot CLI Integration
 
@@ -71,7 +71,7 @@ See [COPILOT.md](COPILOT.md) for detailed documentation and usage examples.
 
 ## MCP Server Integration
 
-This repo includes an MCP (Model Context Protocol) server for programmatic presentation generation. Use it with Claude Desktop, Claude Code, or any MCP-compatible AI assistant.
+This repo includes an MCP (Model Context Protocol) server for programmatic presentation generation. Use it with Copilot CLI or any MCP-compatible AI assistant.
 
 ### Available MCP Tools
 
@@ -84,7 +84,7 @@ This repo includes an MCP (Model Context Protocol) server for programmatic prese
 
 ### Installation
 
-Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+Add to your Copilot CLI config:
 
 ```json
 {
@@ -97,7 +97,7 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 }
 ```
 
-Or with Claude Code:
+Or with uv:
 
 ```json
 {
@@ -114,18 +114,18 @@ Or with Claude Code:
 ### Example Usage
 
 ```
-# In Claude, after MCP is configured:
+# After MCP is configured:
 
 User: Create a pitch deck for my AI startup
-Claude: [Uses create_presentation tool]
+Assistant: [Uses create_presentation tool]
 Created: ai-startup-pitch-deck.html
 
 User: What styles are available?
-Claude: [Uses list_styles tool]
+Assistant: [Uses list_styles tool]
 Shows 12 curated styles organized by category...
 
 User: Show me what Neon Cyber looks like
-Claude: [Uses preview_style tool]
+Assistant: [Uses preview_style tool]
 Generates preview HTML you can open in browser
 ```
 
@@ -233,30 +233,29 @@ This skill was born from the belief that:
 
 | File | Purpose |
 |------|---------|
-| `SKILL.md` | Main skill instructions for Claude Code |
+| `SKILL.md` | Main skill instructions for Copilot CLI |
 | `STYLE_PRESETS.md` | Reference file with 12 curated visual styles |
 | `COPILOT.md` | Copilot CLI integration documentation |
 | `.copilot/` | Copilot CLI commands and discovery files |
 
 ## Requirements
 
-- [Claude Code](https://claude.ai/claude-code) CLI — for presentation creation
-- [GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) (optional) — for analysis commands
+- [GitHub Copilot CLI](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — for presentation creation
 - For PPT conversion: Python with `python-pptx` library
 
 ## Credits
 
-Created by [@zarazhangrui](https://github.com/zarazhangrui) with Claude Code.
+Created by [@zarazhangrui](https://github.com/zarazhangrui).
 
 Inspired by the "Vibe Coding" philosophy — building beautiful things without being a traditional software engineer.
 
 ## Inspiration & Credits
 
-This project inspired the [frontend-slides MCP server](./mcp/), a Model Context Protocol implementation that brings presentation generation to any MCP-compatible AI assistant.
+The MCP server in this project is **inspired by** the original [frontend-slides](https://github.com/zarazhangrui/frontend-slides) work by [@zarazhangrui](https://github.com/zarazhangrui).
 
-**Powered by Copilot CLI** — The MCP server demonstrates how GitHub Copilot CLI can power MCP servers. Copilot CLI's agent capabilities enable rapid development of MCP tools that integrate seamlessly with AI assistants.
+**Built with Copilot CLI** — GitHub's AI-powered command line tool made this MCP implementation possible. Copilot CLI's agent capabilities enable rapid development of MCP tools that integrate seamlessly with AI assistants.
 
-- [MCP Server](./mcp/) — Use presentations programmatically with Claude Desktop or other MCP clients
+- [MCP Server](./mcp/) — Use presentations programmatically with Copilot CLI or other MCP clients
 - [Copilot CLI Documentation](https://docs.github.com/en/copilot/github-copilot-in-the-cli) — Learn more about GitHub's AI-powered command line tool
 
 ## License
