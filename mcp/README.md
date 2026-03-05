@@ -169,6 +169,53 @@ Generated presentations are:
 - **Keyboard-friendly** — Arrow keys and spacebar navigation
 - **Touch-ready** — Swipe gestures on mobile
 
+## Publishing Presentations
+
+The generated HTML presentations are perfect for hosting on GitHub Pages. Use GitHub CLI (`gh`) to quickly publish and share your slides.
+
+### Prerequisites
+
+- [GitHub CLI](https://cli.github.com/) installed
+- Authenticated with `gh auth login`
+
+### Quick Publish to GitHub Pages
+
+```bash
+# Create a new repository for your presentation
+gh repo create my-presentation --public
+
+# Initialize git and push
+cd my-presentation
+git init
+git add .
+git commit -m "Add presentation"
+git push -u origin main
+
+# Enable GitHub Pages
+gh api repos/{owner}/{repo}/pages -X POST -f source='{"branch":"main"}'
+```
+
+Your presentation will be live at `https://{username}.github.io/{repo-name}/`.
+
+### One-Liner for Existing Repo
+
+If you already have a repo and just want to add a presentation:
+
+```bash
+# Generate presentation and push to gh-pages branch
+gh api repos/{owner}/{repo}/pages -X POST -f source='{"branch":"main"}' 2>/dev/null || true
+```
+
+### Verify GitHub CLI Setup
+
+```bash
+# Check if authenticated
+gh auth status
+
+# If not authenticated, run:
+gh auth login
+```
+
 ## Generated HTML Structure
 
 ```html
