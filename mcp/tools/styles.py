@@ -1,0 +1,390 @@
+"""Style presets data for frontend-slides."""
+
+STYLE_PRESETS = {
+    "bold-signal": {
+        "name": "Bold Signal",
+        "vibe": "Confident, bold, modern, high-impact",
+        "best_for": ["Pitch decks", "Keynotes", "Product launches"],
+        "category": "dark",
+        "fonts": {
+            "display": "Archivo Black",
+            "display_weight": 900,
+            "body": "Space Grotesk",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#1a1a1a",
+            "bg_secondary": "#2d2d2d",
+            "card_bg": "#FF5722",
+            "text_primary": "#ffffff",
+            "text_secondary": "#9ca3af",
+            "text_on_card": "#1a1a1a",
+            "accent": "#FF5722",
+        },
+        "signature_elements": [
+            "Bold colored card as focal point",
+            "Large section numbers (01, 02, etc.)",
+            "Navigation breadcrumbs with active/inactive opacity",
+            "Grid-based layout for precise alignment",
+        ],
+        "animation_style": "confident",
+    },
+    "electric-studio": {
+        "name": "Electric Studio",
+        "vibe": "Bold, clean, professional, high contrast",
+        "best_for": ["Agency presentations", "Portfolio showcases", "Client pitches"],
+        "category": "dark",
+        "fonts": {
+            "display": "Manrope",
+            "display_weight": 800,
+            "body": "Manrope",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#0a0a0a",
+            "bg_secondary": "#ffffff",
+            "card_bg": "#ffffff",
+            "text_primary": "#ffffff",
+            "text_secondary": "#9ca3af",
+            "text_on_card": "#0a0a0a",
+            "accent": "#4361ee",
+        },
+        "signature_elements": [
+            "Two-panel vertical split",
+            "Accent bar on panel edge",
+            "Quote typography as hero element",
+            "Minimal, confident spacing",
+        ],
+        "animation_style": "clean",
+    },
+    "creative-voltage": {
+        "name": "Creative Voltage",
+        "vibe": "Bold, creative, energetic, retro-modern",
+        "best_for": ["Creative pitches", "Design agencies", "Artistic projects"],
+        "category": "dark",
+        "fonts": {
+            "display": "Syne",
+            "display_weight": 700,
+            "body": "Space Mono",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#0066ff",
+            "bg_secondary": "#1a1a2e",
+            "card_bg": "#1a1a2e",
+            "text_primary": "#ffffff",
+            "text_secondary": "#9ca3af",
+            "text_on_card": "#ffffff",
+            "accent": "#d4ff00",
+        },
+        "signature_elements": [
+            "Electric blue + neon yellow contrast",
+            "Halftone texture patterns",
+            "Neon badges/callouts",
+            "Script typography for creative flair",
+        ],
+        "animation_style": "energetic",
+    },
+    "dark-botanical": {
+        "name": "Dark Botanical",
+        "vibe": "Elegant, sophisticated, artistic, premium",
+        "best_for": ["Premium brands", "Luxury products", "Artistic portfolios"],
+        "category": "dark",
+        "fonts": {
+            "display": "Cormorant",
+            "display_weight": 600,
+            "body": "IBM Plex Sans",
+            "body_weight": 300,
+        },
+        "colors": {
+            "bg_primary": "#0f0f0f",
+            "bg_secondary": "#1a1a1a",
+            "card_bg": "transparent",
+            "text_primary": "#e8e4df",
+            "text_secondary": "#9a9590",
+            "text_on_card": "#e8e4df",
+            "accent": "#d4a574",
+            "accent_secondary": "#e8b4b8",
+            "accent_tertiary": "#c9b896",
+        },
+        "signature_elements": [
+            "Abstract soft gradient circles (blurred, overlapping)",
+            "Warm color accents (pink, gold, terracotta)",
+            "Thin vertical accent lines",
+            "Italic signature typography",
+        ],
+        "animation_style": "elegant",
+    },
+    "notebook-tabs": {
+        "name": "Notebook Tabs",
+        "vibe": "Editorial, organized, elegant, tactile",
+        "best_for": ["Reports", "Reviews", "Documentation", "Educational content"],
+        "category": "light",
+        "fonts": {
+            "display": "Bodoni Moda",
+            "display_weight": 700,
+            "body": "DM Sans",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#2d2d2d",
+            "bg_secondary": "#f8f6f1",
+            "card_bg": "#f8f6f1",
+            "text_primary": "#1a1a1a",
+            "text_secondary": "#555555",
+            "text_on_card": "#1a1a1a",
+            "tab_colors": ["#98d4bb", "#c7b8ea", "#f4b8c5", "#a8d8ea", "#ffe6a7"],
+        },
+        "signature_elements": [
+            "Paper container with subtle shadow",
+            "Colorful section tabs on right edge",
+            "Binder hole decorations on left",
+            "Tab text scales with viewport",
+        ],
+        "animation_style": "organized",
+    },
+    "pastel-geometry": {
+        "name": "Pastel Geometry",
+        "vibe": "Friendly, organized, modern, approachable",
+        "best_for": ["Product overviews", "Startup pitches", "Team presentations"],
+        "category": "light",
+        "fonts": {
+            "display": "Plus Jakarta Sans",
+            "display_weight": 700,
+            "body": "Plus Jakarta Sans",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#c8d9e6",
+            "bg_secondary": "#faf9f7",
+            "card_bg": "#faf9f7",
+            "text_primary": "#1a1a1a",
+            "text_secondary": "#555555",
+            "text_on_card": "#1a1a1a",
+            "pill_colors": ["#f0b4d4", "#a8d4c4", "#5a7c6a", "#9b8dc4", "#7c6aad"],
+        },
+        "signature_elements": [
+            "Rounded card with soft shadow",
+            "Vertical pills on right edge with varying heights",
+            "Download/action icon in corner",
+            "Consistent pill width, varied heights",
+        ],
+        "animation_style": "friendly",
+    },
+    "split-pastel": {
+        "name": "Split Pastel",
+        "vibe": "Playful, modern, friendly, creative",
+        "best_for": ["Creative agencies", "Design portfolios", "Marketing presentations"],
+        "category": "light",
+        "fonts": {
+            "display": "Outfit",
+            "display_weight": 700,
+            "body": "Outfit",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#f5e6dc",
+            "bg_secondary": "#e4dff0",
+            "card_bg": "transparent",
+            "text_primary": "#1a1a1a",
+            "text_secondary": "#555555",
+            "text_on_card": "#1a1a1a",
+            "badge_colors": ["#c8f0d8", "#f0f0c8", "#f0d4e0"],
+        },
+        "signature_elements": [
+            "Split background colors",
+            "Playful badge pills with icons",
+            "Grid pattern overlay on right panel",
+            "Rounded CTA buttons",
+        ],
+        "animation_style": "playful",
+    },
+    "vintage-editorial": {
+        "name": "Vintage Editorial",
+        "vibe": "Witty, confident, editorial, personality-driven",
+        "best_for": ["Personal brands", "Blog presentations", "Storytelling content"],
+        "category": "light",
+        "fonts": {
+            "display": "Fraunces",
+            "display_weight": 700,
+            "body": "Work Sans",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#f5f3ee",
+            "bg_secondary": "#e8e4df",
+            "card_bg": "transparent",
+            "text_primary": "#1a1a1a",
+            "text_secondary": "#555555",
+            "text_on_card": "#1a1a1a",
+            "accent": "#e8d4c0",
+        },
+        "signature_elements": [
+            "Abstract geometric shapes (circle outline + line + dot)",
+            "Bold bordered CTA boxes",
+            "Witty, conversational copy style",
+            "No illustrations—only geometric CSS shapes",
+        ],
+        "animation_style": "editorial",
+    },
+    "neon-cyber": {
+        "name": "Neon Cyber",
+        "vibe": "Futuristic, techy, confident",
+        "best_for": ["Tech startups", "API documentation", "Developer tools"],
+        "category": "dark",
+        "fonts": {
+            "display": "Clash Display",
+            "display_weight": 700,
+            "body": "Satoshi",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#0a0f1c",
+            "bg_secondary": "#111827",
+            "card_bg": "transparent",
+            "text_primary": "#ffffff",
+            "text_secondary": "#9ca3af",
+            "text_on_card": "#ffffff",
+            "accent": "#00ffcc",
+            "accent_secondary": "#ff00aa",
+        },
+        "signature_elements": [
+            "Particle backgrounds",
+            "Neon glow effects",
+            "Grid patterns",
+            "Cyan and magenta accents",
+        ],
+        "animation_style": "techy",
+    },
+    "terminal-green": {
+        "name": "Terminal Green",
+        "vibe": "Developer-focused, hacker aesthetic",
+        "best_for": ["Dev tools", "API presentations", "Technical documentation"],
+        "category": "dark",
+        "fonts": {
+            "display": "JetBrains Mono",
+            "display_weight": 700,
+            "body": "JetBrains Mono",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#0d1117",
+            "bg_secondary": "#161b22",
+            "card_bg": "transparent",
+            "text_primary": "#39d353",
+            "text_secondary": "#7d8590",
+            "text_on_card": "#39d353",
+            "accent": "#39d353",
+        },
+        "signature_elements": [
+            "Scan lines effect",
+            "Blinking cursor animation",
+            "Code syntax styling",
+            "Monospace-only typography",
+        ],
+        "animation_style": "terminal",
+    },
+    "swiss-modern": {
+        "name": "Swiss Modern",
+        "vibe": "Clean, precise, Bauhaus-inspired",
+        "best_for": ["Corporate presentations", "Data visualization", "Architecture"],
+        "category": "light",
+        "fonts": {
+            "display": "Archivo",
+            "display_weight": 800,
+            "body": "Nunito",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#ffffff",
+            "bg_secondary": "#f5f5f5",
+            "card_bg": "transparent",
+            "text_primary": "#000000",
+            "text_secondary": "#555555",
+            "text_on_card": "#000000",
+            "accent": "#ff3300",
+        },
+        "signature_elements": [
+            "Visible grid system",
+            "Asymmetric layouts",
+            "Geometric shapes",
+            "Precise typography",
+        ],
+        "animation_style": "precise",
+    },
+    "paper-and-ink": {
+        "name": "Paper & Ink",
+        "vibe": "Editorial, literary, thoughtful",
+        "best_for": ["Storytelling", "Long-form content", "Literary projects"],
+        "category": "light",
+        "fonts": {
+            "display": "Cormorant Garamond",
+            "display_weight": 600,
+            "body": "Source Serif 4",
+            "body_weight": 400,
+        },
+        "colors": {
+            "bg_primary": "#faf9f7",
+            "bg_secondary": "#f5f3ee",
+            "card_bg": "transparent",
+            "text_primary": "#1a1a1a",
+            "text_secondary": "#555555",
+            "text_on_card": "#1a1a1a",
+            "accent": "#c41e3a",
+        },
+        "signature_elements": [
+            "Drop caps",
+            "Pull quotes",
+            "Elegant horizontal rules",
+            "Serif typography hierarchy",
+        ],
+        "animation_style": "literary",
+    },
+}
+
+# Font sources for each style
+FONT_SOURCES = {
+    "Archivo Black": ("Google", "https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap"),
+    "Space Grotesk": ("Google", "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&display=swap"),
+    "Manrope": ("Google", "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"),
+    "Syne": ("Google", "https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&display=swap"),
+    "Space Mono": ("Google", "https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"),
+    "Cormorant": ("Google", "https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&display=swap"),
+    "IBM Plex Sans": ("Google", "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&display=swap"),
+    "Bodoni Moda": ("Google", "https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&display=swap"),
+    "DM Sans": ("Google", "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"),
+    "Plus Jakarta Sans": ("Google", "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap"),
+    "Outfit": ("Google", "https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&display=swap"),
+    "Fraunces": ("Google", "https://fonts.googleapis.com/css2?family=Fraunces:wght@400;700;900&display=swap"),
+    "Work Sans": ("Google", "https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500&display=swap"),
+    "Clash Display": ("Fontshare", "https://api.fontshare.com/v2/css?f[]=clash-display@700,800&display=swap"),
+    "Satoshi": ("Fontshare", "https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"),
+    "JetBrains Mono": ("Google", "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"),
+    "Archivo": ("Google", "https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700;800&display=swap"),
+    "Nunito": ("Google", "https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;700&display=swap"),
+    "Cormorant Garamond": ("Google", "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"),
+    "Source Serif 4": ("Google", "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600&display=swap"),
+}
+
+def get_style_by_name(name: str) -> dict | None:
+    """Get a style preset by name (case-insensitive, handles both slug and display name)."""
+    name_lower = name.lower().strip()
+    
+    # Try exact slug match first
+    if name_lower in STYLE_PRESETS:
+        return STYLE_PRESETS[name_lower]
+    
+    # Try display name match
+    for slug, preset in STYLE_PRESETS.items():
+        if preset["name"].lower() == name_lower:
+            return preset
+    
+    return None
+
+def get_all_style_names() -> list[str]:
+    """Get list of all style names (display names)."""
+    return [preset["name"] for preset in STYLE_PRESETS.values()]
+
+def get_all_style_slugs() -> list[str]:
+    """Get list of all style slugs."""
+    return list(STYLE_PRESETS.keys())

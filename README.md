@@ -69,6 +69,68 @@ cp SKILL.md STYLE_PRESETS.md ~/.copilot/skills/frontend-slides/
 
 See [COPILOT.md](COPILOT.md) for detailed documentation and usage examples.
 
+## MCP Server Integration
+
+This repo includes an MCP (Model Context Protocol) server for programmatic presentation generation. Use it with Claude Desktop, Claude Code, or any MCP-compatible AI assistant.
+
+### Available MCP Tools
+
+| Tool | Description |
+|------|-------------|
+| `create_presentation` | Generate a complete HTML presentation |
+| `list_styles` | List all available visual style presets |
+| `preview_style` | Generate a sample slide to preview a style |
+| `get_style_details` | Get full details for a specific style |
+
+### Installation
+
+Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_desktop_config.json`):
+
+```json
+{
+  "mcpServers": {
+    "frontend-slides": {
+      "command": "python",
+      "args": ["/path/to/frontend-slides/mcp/server.py"]
+    }
+  }
+}
+```
+
+Or with Claude Code:
+
+```json
+{
+  "mcpServers": {
+    "frontend-slides": {
+      "command": "uv",
+      "args": ["run", "python", "server.py"],
+      "cwd": "/path/to/frontend-slides/mcp"
+    }
+  }
+}
+```
+
+### Example Usage
+
+```
+# In Claude, after MCP is configured:
+
+User: Create a pitch deck for my AI startup
+Claude: [Uses create_presentation tool]
+Created: ai-startup-pitch-deck.html
+
+User: What styles are available?
+Claude: [Uses list_styles tool]
+Shows 12 curated styles organized by category...
+
+User: Show me what Neon Cyber looks like
+Claude: [Uses preview_style tool]
+Generates preview HTML you can open in browser
+```
+
+See [mcp/README.md](mcp/README.md) for full documentation.
+
 ## Usage
 
 ### Create a New Presentation
