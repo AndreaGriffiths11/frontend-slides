@@ -45,6 +45,7 @@ This repo includes GitHub Copilot CLI commands for analyzing and extracting cont
 
 | Command | Description |
 |---------|-------------|
+| `/create-presentation` | Create a new HTML presentation from scratch with guided workflow |
 | `/summarize-slides` | Summarize content and structure of an HTML presentation |
 | `/find-topics` | Extract and organize topics/themes from a presentation |
 | `/suggest-style` | Recommend a visual style based on content and audience |
@@ -59,8 +60,11 @@ mkdir -p ~/.copilot/skills/frontend-slides
 cp -r .copilot ~/.copilot/skills/frontend-slides/
 cp SKILL.md STYLE_PRESETS.md ~/.copilot/skills/frontend-slides/
 
-# Use a command
-/copilot summarize-slides my-presentation.html
+# Create a new presentation
+/copilot create-presentation
+
+# Or with a specific style
+/copilot create-presentation --style "Bold Signal"
 ```
 
 See [COPILOT.md](COPILOT.md) for detailed documentation and usage examples.

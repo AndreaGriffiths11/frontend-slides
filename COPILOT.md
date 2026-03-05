@@ -21,6 +21,7 @@ cp -r .copilot ~/.copilot/skills/frontend-slides/
 
 | Command | Description |
 |---------|-------------|
+| `/create-presentation` | Create a new HTML presentation from scratch with guided content and style discovery |
 | `/summarize-slides` | Summarize content and structure of an HTML presentation |
 | `/find-topics` | Extract and organize topics/themes from a presentation |
 | `/suggest-style` | Recommend a visual style based on content and audience |
@@ -92,7 +93,27 @@ The `.copilot/discovery/` directory contains context files that help Copilot und
 
 ## Creating New Presentations
 
-For the full presentation creation workflow (content discovery, style previews, generation), use Claude Code with the SKILL.md file directly:
+### Quick Start (Copilot CLI)
+
+```bash
+/copilot create-presentation
+```
+
+This launches an interactive workflow:
+1. Gather content (topic, key messages, slides, images)
+2. Ask about audience and desired feeling
+3. Pick a style (direct selection or preview-based discovery)
+4. Generate a self-contained HTML file
+
+### With Style Preset
+
+```bash
+/copilot create-presentation --style "Bold Signal"
+```
+
+### Full Skill (Claude Code)
+
+For the complete presentation creation workflow with richer style previews, use Claude Code with the SKILL.md file directly:
 
 ```bash
 # In Claude Code
@@ -101,7 +122,7 @@ For the full presentation creation workflow (content discovery, style previews, 
 > "Create a pitch deck for my AI startup"
 ```
 
-The Copilot CLI commands are optimized for analysis and extraction tasks, while the full skill is best for creation.
+The Copilot CLI commands are optimized for quick creation and analysis tasks, while the full skill is best for complex projects with extensive customization.
 
 ## Extending
 
